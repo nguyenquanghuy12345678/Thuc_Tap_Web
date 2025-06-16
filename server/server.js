@@ -1,13 +1,14 @@
 const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
 // Đường dẫn file JSON
-const DATA_FILE = 'data.json';
+const DATA_FILE = path.join(__dirname, 'data.json');
 
 // Tạo file data.json nếu chưa tồn tại
 if (!fs.existsSync(DATA_FILE)) {
@@ -35,6 +36,9 @@ app.post('/api/contact', (req, res) => {
   });
 });
 
+// Xử lý các route tĩnh cho frontend
+app.use(express.static(path.join(__dirname, '../frontend')));
+
 // Chạy server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -61,18 +61,22 @@
                 <li>Ngày: 16/06/2025, 09:48 AM +07</li>
                 <li>Tác giả: Nguyễn Quang Huy</li>
               </ul>
-              <form>
+              <form id="contactForm">
                 <div class="form-group">
-                  <input type="text" class="input" placeholder="Họ và tên">
+                  <input type="text" class="input" name="name" placeholder="Họ và tên" required>
+                  <span class="error" style="color:red; display:none;">Vui lòng nhập họ và tên.</span>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="input" placeholder="Email">
+                  <input type="email" class="input" name="email" placeholder="Email" required>
+                  <span class="error" style="color:red; display:none;">Vui lòng nhập email hợp lệ.</span>
                 </div>
                 <div class="form-group">
-                  <textarea class="input" placeholder="Lời nhắn"></textarea>
+                  <textarea class="input" name="message" placeholder="Lời nhắn" required></textarea>
+                  <span class="error" style="color:red; display:none;">Vui lòng nhập lời nhắn.</span>
                 </div>
                 <button type="submit" class="primary-button">Gửi</button>
               </form>
+              <p id="responseMessage" style="display:none; color:green;"></p>
             </div>
           </div>
         </div>
@@ -120,9 +124,7 @@
             <!-- Tin 3 -->
             <div class="post post-widget">
               <div class="post-img">
-                <img
-                  src="images/giao duc mo.jpg"
-                  alt="Giáo dục mở">
+                <img src="images/giao duc mo.jpg" alt="Giáo dục mở">
               </div>
               <div class="post-body">
                 <h4 class="post-title">
@@ -138,7 +140,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -153,6 +154,61 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.stellar/0.6.2/jquery.stellar.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="main.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Validation
+      const name = document.querySelector('input[name="name"]').value;
+      const email = document.querySelector('input[name="email"]').value;
+      const message = document.querySelector('textarea[name="message"]').value;
+      let isValid = true;
+
+      if (!name) {
+        document.querySelector('input[name="name"] + .error').style.display = 'block';
+        isValid = false;
+      } else {
+        document.querySelector('input[name="name"] + .error').style.display = 'none';
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        document.querySelector('input[name="email"] + .error').style.display = 'block';
+        isValid = false;
+      } else {
+        document.querySelector('input[name="email"] + .error').style.display = 'none';
+      }
+
+      if (!message) {
+        document.querySelector('textarea[name="message"] + .error').style.display = 'block';
+        isValid = false;
+      } else {
+        document.querySelector('textarea[name="message"] + .error').style.display = 'none';
+      }
+
+      if (!isValid) return;
+
+      const formData = { name, email, message };
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+        const messageDiv = document.getElementById('responseMessage');
+        messageDiv.textContent = result.message || result.error;
+        messageDiv.style.display = 'block';
+        if (response.ok) e.target.reset();
+      } catch (error) {
+        document.getElementById('responseMessage').textContent = 'Lỗi kết nối server.';
+        document.getElementById('responseMessage').style.color = 'red';
+        document.getElementById('responseMessage').style.display = 'block';
+      }
+    });
+  </script>
 </body>
 
 </html>
