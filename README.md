@@ -8,7 +8,7 @@ Website cho sự kiện VKU Job Fair 2025, bao gồm frontend và backend.
 - `vercel.json`: Cấu hình deploy trên Vercel.
 
 ## Hướng dẫn cài đặt
-1. Clone repository: `git clone https://github.com/your-username/thuc-tap-web.git`
+1. Clone repository: `git clone https://github.com/nguyenquanghuy12345678/Thuc_Tap_Web.git`
 2. Cài đặt dependencies backend: `cd server && npm install`
 3. Chạy local: `node server.js`
 4. Deploy trên Vercel: Kết nối repository và deploy.
