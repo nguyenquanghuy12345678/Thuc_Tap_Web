@@ -1,0 +1,27 @@
+#post-header {
+  background-image: url('images/ngay hoi tuyen dung i.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+  width: 100%;
+  margin-top: 56px; /* Đẩy xuống để không đụng navbar */
+}
+
+/* XÓA HOẶC BỎ COMMENT lớp phủ tối nếu không muốn bị đen */
+/* Nếu có đoạn sau, bạn hãy xóa hoặc comment lại */
+
+#post-header::before {
+  /* content: ""; */
+  /* position: absolute; */
+  /* top: 0; left: 0; */
+  /* width: 100%; height: 100%; */
+  /* background: rgba(0, 0, 0, 0.4); */
+  /* z-index: 0; */
+}
+
+/* Nếu bạn vẫn muốn chèn nội dung khác trong tương lai */
+#post-header .container {
+  position: relative;
+  z-index: 1;
+}
