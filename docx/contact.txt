@@ -33,6 +33,7 @@
     </div>
   </header>
 
+  <!-- đã bỏ section fix "Liên hệ" -->
   <section id="post-header" class="page-header"></section>
 
   <div class="section">
@@ -83,6 +84,8 @@
         <div class="col-md-4">
           <div class="aside-widget">
             <h3 class="widget-title">Thông Tin Liên Quan</h3>
+
+            <!-- Tin 1 -->
             <div class="post post-widget">
               <div class="post-img">
                 <img src="images/cau noi vung chac.jpg" alt="VKU Job Fair 2025">
@@ -99,6 +102,8 @@
                 </ul>
               </div>
             </div>
+
+            <!-- Tin 2 -->
             <div class="post post-widget">
               <div class="post-img">
                 <img src="images/so noi vu.jpg" alt="Hợp tác Sở Nội vụ">
@@ -115,6 +120,8 @@
                 </ul>
               </div>
             </div>
+
+            <!-- Tin 3 -->
             <div class="post post-widget">
               <div class="post-img">
                 <img src="images/giao duc mo.jpg" alt="Giáo dục mở">
@@ -184,7 +191,7 @@
       const formData = { name, email, message };
 
       try {
-        const response = await fetch('https://thuc-tap-web.vercel.app/api/contact', {
+        const response = await fetch('https://thuc-tap-web.vercel.app/api/contact', { // Sử dụng URL đầy đủ
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
@@ -196,7 +203,7 @@
         messageDiv.style.display = 'block';
         if (response.ok) e.target.reset();
       } catch (error) {
-        console.error('Error:', error);
+        console.error('Error:', error); // Log lỗi để debug
         document.getElementById('responseMessage').textContent = 'Lỗi kết nối server.';
         document.getElementById('responseMessage').style.color = 'red';
         document.getElementById('responseMessage').style.display = 'block';
@@ -205,4 +212,4 @@
   </script>
 </body>
 
-</html>
+</html>y

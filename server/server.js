@@ -7,7 +7,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Đường dẫn file JSON
 const DATA_FILE = path.join(__dirname, 'data.json');
 
 // Tạo file data.json nếu chưa tồn tại
@@ -16,7 +15,6 @@ if (!fs.existsSync(DATA_FILE)) {
   console.log('Created data.json');
 }
 
-// API để nhận dữ liệu từ form liên hệ
 app.post('/api/contact', (req, res) => {
   const { name, email, message } = req.body;
 
@@ -29,6 +27,7 @@ app.post('/api/contact', (req, res) => {
 
     fs.writeFile(DATA_FILE, JSON.stringify(contacts, null, 2), (err) => {
       if (err) {
+        console.error('Write error:', err);
         return res.status(500).json({ error: 'Lỗi khi lưu dữ liệu' });
       }
       res.status(200).json({ message: 'Cảm ơn bạn đã gửi thông tin!' });
@@ -36,9 +35,7 @@ app.post('/api/contact', (req, res) => {
   });
 });
 
-// Xử lý các route tĩnh cho frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-// Chạy server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
