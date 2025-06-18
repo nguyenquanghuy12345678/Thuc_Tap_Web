@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">VKU Job Fair 2025</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -36,18 +39,20 @@
     </div>
   </section> -->
   <section id="home" class="page-header" style="position: relative; height: 500px; overflow: hidden;">
-  <!-- YouTube Video Background -->
-  <iframe src="https://www.youtube.com/embed/LamxCf6MXeo?autoplay=1&mute=1&loop=1&playlist=LamxCf6MXeo&controls=0&showinfo=0&modestbranding=1"
-    frameborder="0" allow="autoplay; fullscreen"
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1;">
-  </iframe>
+    <!-- YouTube Video Background -->
+    <iframe
+      src="https://www.youtube.com/embed/LamxCf6MXeo?autoplay=1&mute=1&loop=1&playlist=LamxCf6MXeo&controls=0&showinfo=0&modestbranding=1"
+      frameborder="0" allow="autoplay; fullscreen"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1;">
+    </iframe>
 
-  <!-- Nội dung phía trên video -->
-  <div class="container" style="position: relative; z-index: 1; color: white; text-align: center; padding-top: 150px;">
-    <h1>VKU Job Fair 2025</h1>
-    <p class="lead">Ngày hội việc làm - 15/06/2025, 11:27 PM +07</p>
-  </div>
-</section>
+    <!-- Nội dung phía trên video -->
+    <div class="container"
+      style="position: relative; z-index: 1; color: white; text-align: center; padding-top: 150px;">
+      <h1>VKU Job Fair 2025</h1>
+      <p class="lead">Ngày hội việc làm - 15/06/2025, 11:27 PM +07</p>
+    </div>
+  </section>
 
 
   <section id="events" class="section">
@@ -129,21 +134,66 @@
     </div>
   </section>
 
-  <section id="project" class="section">
-    <div class="container">
-      <h2 class="section-title">Dự Án Cá Nhân</h2>
-      <div class="post">
-        <div class="post-body">
-          <h3 class="post-title">Ứng dụng hỗ trợ VKU Job Fair</h3>
-          <ul class="post-meta">
-            <li>Tác giả: Nguyễn Quang Huy</li>
-            <li>Ngày: 15/06/2025</li>
-          </ul>
-          <p>Ứng dụng Android giúp theo dõi gian hàng, seminar, điểm danh bằng QR code. Sử dụng Kotlin, Room database, MVVM.</p>
+<section id="project" class="section py-5 bg-light">
+  <style>
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+  <div class="container">
+    <h2 class="section-title text-center mb-4">Dự Án Cá Nhân</h2>
+    <div class="row">
+      <!-- Project 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="https://raw.githubusercontent.com/nguyenquanghuy12345678/To-do-app-android/refs/heads/main/screenshots/travel_planner_screen.jpg"
+            class="card-img-top" alt="VKU Job Fair App">
+          <div class="card-body">
+            <h5 class="card-title">To Do App</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Kotlin | MVVM | Room DB</h6>
+            <p class="card-text">Ứng dụng ghi chú và quản lý công việc</p>
+            <a href="https://github.com/nguyenquanghuy12345678/To-do-app-android" target="_blank"
+              class="btn btn-outline-primary btn-sm">Xem GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/project2.jpg" class="card-img-top" alt="Portfolio">
+          <div class="card-body">
+            <h5 class="card-title">Trang Cá Nhân Portfolio</h5>
+            <h6 class="card-subtitle mb-2 text-muted">HTML | CSS | JavaScript</h6>
+            <p class="card-text">Website cá nhân giới thiệu bản thân, kỹ năng và dự án.</p>
+            <a href="https://github.com/nguyenquanghuy12345678/Portfolio" target="_blank"
+              class="btn btn-outline-primary btn-sm">Xem GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/project3.jpg" class="card-img-top" alt="Task Tracker">
+          <div class="card-body">
+            <h5 class="card-title">Quản lý Nhiệm vụ (Task Tracker)</h5>
+            <h6 class="card-subtitle mb-2 text-muted">React | Firebase</h6>
+            <p class="card-text">Web app theo dõi nhiệm vụ hàng ngày, đồng bộ thời gian thực.</p>
+            <a href="https://github.com/nguyenquanghuy12345678/TaskTracker" target="_blank"
+              class="btn btn-outline-primary btn-sm">Xem GitHub</a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
+
 
   <section id="gallery" class="section">
     <div class="container">
@@ -163,10 +213,11 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Thêm jQuery và jQuery Stellar trước main.js -->
+  <!-- Thêm jQuery và jQuery Stellar trước main.js -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.stellar/0.6.2/jquery.stellar.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="main.js"></script>
 </body>
+
 </html>
